@@ -31,11 +31,7 @@
                 background-size: 10rem 10rem;
                 overflow: hidden;
                 z-index: -1;
-                
-
 }
-
-
 .grid--background::after{
     content: "";
     inset: 0;
@@ -54,6 +50,16 @@
     border: 1px solid var(--color4);
     border-radius: 6px;
     animation: fadeIn 0.7s ease-in-out forwards;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.content{
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    gap: 20px;
 }
 
 
