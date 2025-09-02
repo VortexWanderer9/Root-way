@@ -1,0 +1,71 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --color1: rgba(0, 255, 255, 0.233);  /* Light Cyan with opacity */
+    --color2: rgba(0, 255, 204, 0.4);  /* Aqua with opacity */
+    --color3: rgba(0, 179, 179, 0.4);  /* Teal with opacity */
+    --color4: rgba(0, 204, 153, 0.4);  /* Sea Green with opacity */
+    --color5: rgba(0, 153, 153, 0.4);  /* Dark Cyan with opacity */
+    --color6: rgba(0, 230, 230, 0.4);  /* Light Aqua with opacity */
+    --color7: rgba(26, 235, 212, 0.4); /* Turquoise with opacity */
+    --color8: rgba(0, 179, 230, 0.4);  /* Light Sky Blue with opacity */
+    --color9: rgba(0, 204, 255, 0.4);  /* Cyan with opacity */
+    --color10: rgba(102, 194, 255, 0.4); /* Light Blue with opacity */
+    --color11: rgba(51, 153, 255, 0.4); /* Vivid Blue with opacity */
+    --color12: rgba(30, 144, 255, 0.4); /* Dodger Blue with opacity */
+    --color13: rgba(102, 255, 204, 0.4); /* Pale Cyan with opacity */
+    --color14: rgba(0, 153, 255, 0.4);  /* Deep Blue with opacity */
+    --color15: rgba(0, 255, 255, 0.12);
+}
+
+
+.grid--background{
+    inset: 0;
+    position: fixed;
+      background-color: #212228;
+    background-image: linear-gradient(rgba(1, 255, 221, 0.1) .1rem, transparent .1rem),
+                linear-gradient(90deg, rgba(1, 255, 221, 0.1) .1rem, transparent .1rem);
+                 filter: drop-shadow(0 0 8px rgba(0, 255, 255, 0.7))
+            drop-shadow(0 0 16px rgba(0, 255, 255, 0.9));
+                background-size: 10rem 10rem;
+                overflow: hidden;
+                z-index: -1;
+
+}
+
+
+.grid--background::after{
+    content: "";
+    inset: 0;
+    position: absolute;
+      background: radial-gradient(circle at center, var(--color15), transparent 70%);
+       box-shadow: 0 0 300px 120px var(--color2);
+       backdrop-filter: blur(1px);
+        z-index: -1111;
+}
+
+.login-container{
+    height: 200px;
+    max-width: 400px;
+    background-color: var(--color3);
+    margin: 10% auto;
+    border: 1px solid var(--color4);
+    border-radius: 6px;
+    animation: fadeIn 0.7s ease-in-out forwards;
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-200px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        
+    }
+}
+
+
