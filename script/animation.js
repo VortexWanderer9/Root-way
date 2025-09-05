@@ -6,7 +6,6 @@ function rotateGradient(){
     requestAnimationFrame(rotateGradient)
 }
 rotateGradient()
-
 let title = document.querySelector('.heading');
 let i = 0;
 const text = 'Login First'
@@ -20,6 +19,4 @@ const text = 'Login First'
             i--
     }
  }
-
-
  typeWrite()
