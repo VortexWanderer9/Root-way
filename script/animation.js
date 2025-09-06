@@ -8,6 +8,7 @@ function rotateGradient(){
 rotateGradient()
 let title = document.querySelector('.heading');
 let i = 0;
+let complete = true
 const text = 'Login First'
  function typeWrite(){
     if(i < text.length){
@@ -15,8 +16,29 @@ const text = 'Login First'
         i++;
         setTimeout(typeWrite, 200)
     }
-    if(i == text.length){
-            i--
-    }
  }
  typeWrite()
+
+
+
+  let u = 0;
+  let tt = "aayush"
+  let accept = true;
+  function bug(){
+    if(accept){
+        u ++
+        console.log(u);
+        
+    }
+    if(u === tt.length){
+        accept = false;
+      u --
+           console.log(u);
+    }
+    if(u === 0){
+        accept = true
+    }
+    setTimeout(bug, 200)
+  }
+
+  bug()
