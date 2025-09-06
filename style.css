@@ -91,6 +91,17 @@ body{
     border-bottom: 2px solid var(--color12);
   
 }
+.heading::after {
+  content: '|';
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
 .email{
     display: flex;
     flex-direction: column;
@@ -107,6 +118,7 @@ body{
     color: var(--font-color);
     font-size: 1.3rem;
     margin-left: 6px;
+    font-weight: 600;
 }
 .email input,
 .password input{

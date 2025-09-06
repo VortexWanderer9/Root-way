@@ -6,39 +6,43 @@ function rotateGradient(){
     requestAnimationFrame(rotateGradient)
 }
 rotateGradient()
-let title = document.querySelector('.heading');
+const title = document.querySelector('.heading');
 let i = 0;
-let complete = true
-const text = 'Login First'
- function typeWrite(){
-    if(i < text.length){
-        title.textContent = text.substring(0, i +1);
-        i++;
-        setTimeout(typeWrite, 200)
-    }
- }
- typeWrite()
+let dir = 1;
+const text = 'Login First';
 
+function typeWrite() {
+  title.textContent = text.substring(0, i);
 
+  i += dir;
 
-  let u = 0;
-  let tt = "aayush"
-  let accept = true;
-  function bug(){
-    if(accept){
-        u ++
-        console.log(u);
-        
-    }
-    if(u === tt.length){
-        accept = false;
-      u --
-           console.log(u);
-    }
-    if(u === 0){
-        accept = true
-    }
-    setTimeout(bug, 200)
+  // Flip direction at boundaries
+  if (i > text.length || i < 0) {
+    dir *= -1;
+    i += dir; // adjust to stay within range
   }
 
-  bug()
+  setTimeout(typeWrite, 150); // faster looks smoother
+}
+
+typeWrite();
+
+
+
+// let i = 0;
+// let dir = 1; // 1 = forward, -1 = backward
+// const word = "Write it and back it";
+
+// function makeAlgo() {
+//   console.log(word.substring(0, i));
+
+//   i += dir;
+
+//   if (i === word.length || i === 0) {
+//     dir *= -1; // reverse direction
+//   }
+
+//   setTimeout(makeAlgo, 200);
+// }
+
+// makeAlgo();
