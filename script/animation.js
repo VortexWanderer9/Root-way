@@ -33,6 +33,5 @@ function typeWrite() {
 
   setTimeout(typeWrite, 150);
 }
-
 typeWrite();
 
