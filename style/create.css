@@ -74,3 +74,14 @@
         color:white;
         background:linear-gradient(90deg, rgb(var(--accent-2)), rgb(var(--accent-1)));
     }
+    .already-have{
+        margin:16px 0 ;
+        text-align: center;
+    }
+
+    .already-have a{
+        color: var(--muted);
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+    }
