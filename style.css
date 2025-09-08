@@ -218,7 +218,9 @@ body{
     font-size: 1.2rem;
     font-weight: 600;
         transition: 0.3s ease-in-out;
-   
+    box-shadow: 0 0 8px var(--color10);
+    letter-spacing: 1px;
+    user-select: none;
 }
 
 .button:hover{
