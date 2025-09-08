@@ -1,12 +1,4 @@
-let userData = JSON.parse(localStorage.getItem('userData'));
-if(!userData){
-   userData = [{
-    firstName: 'Adam',
-    lastName: 'Smith',
-    email: "elliot@society.com",
-    password: "xc6b75b6c2x4c5!#Xc$!%b"
-}]
-}
+import {userData } from '../data/user.js'
 
 
 function saveToLocalStorage(){
@@ -19,10 +11,10 @@ const firstName = document.getElementById('first');
 const lastName = document.getElementById('last');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
-const button = document.getElementById('submit');
+const createBtn = document.getElementById('submit-adv');
 const errorText = document.querySelector('.error-text');
 
-button.addEventListener('click', (e) =>{
+ createBtn.addEventListener('click', (e) =>{
 e.preventDefault();
 errorText.textContent = ""
     let fname = firstName.value.trim();
@@ -33,6 +25,11 @@ errorText.textContent = ""
         errorText.textContent = "Check all the form are Filled"
     } else makeAccount(fname, lname, mail, code)
     saveToLocalStorage()
+
+    firstName.value = "";
+    lastName.value = "";
+    email.value = "";
+    password.value = "";
 
 });
 
@@ -53,4 +50,6 @@ function makeObj(fn, ln, em, pas){
     };
     return user;
 }
+
+
 

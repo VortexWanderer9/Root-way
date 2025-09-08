@@ -1,31 +1,30 @@
-
 import {userData } from '../data/user.js'
-
-const button = document.querySelector(".button");
+const buttonLogin = document.querySelector(".button");
 const email = document.querySelector('#email-input');
-const password = document.querySelector('#password-input');
+const passwordInp = document.querySelector('#password-input');
 const error = document.querySelector('.error-message');
 
-button.addEventListener('click', (e) =>{
+buttonLogin.addEventListener('click', (e) =>{
    e.preventDefault()
    error.textContent = ""
     let user = email.value.trim();
-    let pass = password.value.trim();
+    let pass = passwordInp.value.trim();
     if(user === "" || pass === ""){
         error.textContent = "Email and Password must be entered"
     } else  loginValidate(user, pass)
    
 });
-function loginValidate(user, password){
+function loginValidate(user, pass){
+    userData.forEach(item => {
+        if(item.email === user && item.password == pass){
+            window.location.href = '../lending.html'
+        }
+    });
 
-   userData.forEach((data) =>{
-    let isID = data.id == user
-    let isPass = data.password
-    console.log(isID, isPass);
-   })
 
 
 }
 document.querySelector('.dont-have').addEventListener('click', ()=>{
 window.location.href = 'create.html'
 });
+
