@@ -1,12 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create new Account</title>
-    <link rel="stylesheet" href="../style/create.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Create Account</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style/create.css">
 </head>
 <body>
-    
+  <main class="card">
+    <h1>Create Account</h1>
+    <p>Fast. Secure. Modern.</p>
+    <form>
+      <div class="field">
+        <label for="first">First name</label>
+        <input id="first" type="text" required >
+      </div>
+      <div class="field">
+        <label for="last">Last name</label>
+        <input id="last" type="text" required>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" type="email" required>
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input id="password" type="password" required>
+      </div>
+      <button type="submit">Create Account</button>
+    </form>
+  </main>
 </body>
 </html>

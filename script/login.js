@@ -23,6 +23,9 @@ function loginValidate(user, password){
     let isPass = data.password
     console.log(isID, isPass);
    })
-// window.location.href = 'src/create.html'
+
 
 }
+document.querySelector('.dont-have').addEventListener('click', ()=>{
+window.location.href = 'src/create.html'
+})
