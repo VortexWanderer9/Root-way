@@ -227,11 +227,12 @@ body{
 }
 
 .error-message{
+    text-align: center;
     padding: 5px;
     /* text-align: center; */
     font-size: 1rem;
-    color: var(--color8);
-    height: 40px;
+    color: red;
+    /* height: 40px; */
     font-weight: 400;
     text-shadow: 0 0 5px rgba(0, 179, 230, 0.9);    
 }
