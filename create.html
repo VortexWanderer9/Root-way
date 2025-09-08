@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Create Account</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../style/create.css">
+  <link rel="stylesheet" href="/style/create.css">
 </head>
 <body>
   <main class="card">
@@ -29,11 +29,16 @@
         <label for="password">Password</label>
         <input id="password" type="password" required>
       </div>
-      <button type="submit">Create Account</button>
+      <div class="error-text"></div>
+      <button id="submit" type="submit">Create Account</button>
      <div class="already-have">
-       <a href="../index.html">Already have an account</a>
+       <a href="index.html">Already have an account</a>
+       <img src="images/arrow-sm-right-svgrepo-com.svg" alt="arrow" width="20">
      </div>
     </form>
   </main>
 </body>
+<!-- <script type="module" src="script/login.js"></script> -->
+<script type="module" src="data/user.js"></script>
+<script type="module" src="script/create.js"></script>
 </html>

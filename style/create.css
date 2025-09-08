@@ -77,6 +77,20 @@
     .already-have{
         margin:16px 0 ;
         text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+    }
+    .already-have img{
+        filter: invert(1);
+        left: -9px;
+        position: relative;
+        opacity: 1;
+        transition: all 0.3s ease;
+    }
+    .already-have a:hover + img{
+        left: 0px;
     }
 
     .already-have a{
@@ -84,4 +98,15 @@
         text-decoration: none;
         font-size: 14px;
         font-weight: 500;
+    }
+
+    .already-have a:hover{
+        text-decoration: underline;
+    }
+
+    .error-text{
+       color: red;
+         font-size: 15px;
+            text-align: center;
+            font-weight: 600;
     }

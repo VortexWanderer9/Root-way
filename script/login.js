@@ -27,5 +27,5 @@ function loginValidate(user, password){
 
 }
 document.querySelector('.dont-have').addEventListener('click', ()=>{
-window.location.href = 'src/create.html'
-})
+window.location.href = 'create.html'
+});
