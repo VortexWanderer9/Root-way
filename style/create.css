@@ -116,8 +116,46 @@
     }
 
     .successful-message{
-         color: rgba(0, 204, 255, 0.4);
+         color: rgb(255, 255, 255);
             font-size: 15px;
                 text-align: center;
                 font-weight: 600;
+                background-color: #00e1ff;
+                padding: 10px 20px;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                position: relative;
+                opacity: 0;
+                animation: show 0.1s forwards;
+                transform: translateY(-20px);
+    }
+
+   .successful-message::before{
+        content: '';
+        bottom: 0;
+        position: absolute;
+        background-color: #ff0000;
+        width: 0;
+        height: 5px;
+        left: 0;
+        border-radius: 0 0 40px 40px;
+        z-index: -1;
+   }
+
+    .successful-message::before{
+          animation: successAnim 1s forwards;
+    }
+
+    @keyframes successAnim{
+        to{
+            width: 100%;
+        }
+    }
+    @keyframes show {
+        to{
+            opacity: 1;
+             transform: translateY(0);
+        }
     }
