@@ -128,8 +128,6 @@
                 gap: 10px;
                 position: relative;
                 opacity: 0;
-                animation: show 0.1s forwards;
-                transform: translateY(-20px);
     }
 
    .successful-message::before{
@@ -144,8 +142,13 @@
         z-index: -1;
    }
 
-    .successful-message::before{
+    .successful-message.show::before{
           animation: successAnim 1s forwards;
+    }
+    .successful-message.show{
+        animation: show 0.1s forwards;
+                transform: translateY(-20px);
+
     }
 
     @keyframes successAnim{

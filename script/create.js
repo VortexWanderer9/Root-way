@@ -13,6 +13,7 @@ const email = document.getElementById('email');
 const password = document.getElementById('password');
 const createBtn = document.getElementById('submit-adv');
 const errorText = document.querySelector('.error-text');
+const conformMessage = document.querySelector('.successful-message')
 
  createBtn.addEventListener('click', (e) =>{
 e.preventDefault();
@@ -36,9 +37,13 @@ errorText.textContent = ""
 
 function makeAccount(fn, ln, em, pas){
   let login = makeObj(fn, ln, em, pas)
-userData.push(login)
+
 saveToLocalStorage()
-console.log(userData);
+userData.push(login)
+conformMessage.classList.add('show')
+setTimeout(() =>{
+conformMessage.classList.remove('show')
+}, 900)
 }
 
 function makeObj(fn, ln, em, pas){
