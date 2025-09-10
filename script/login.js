@@ -16,8 +16,14 @@ buttonLogin.addEventListener('click', (e) =>{
 });
 function loginValidate(user, pass){
     userData.forEach(item => {
-        if(item.email === user && item.password == pass){
-            window.location.href = '../lending.html'
+        if(item.email === user && item.password === pass){
+            error.style.color = "rgba(0, 204, 255, 0.4)"
+             error.textContent = "Access Granted"
+            setTimeout(() =>{
+                window.location.href = '../lending.html'
+            }, 500)
+        }else{
+             error.textContent = "Invalid Login"
         }
     });
 

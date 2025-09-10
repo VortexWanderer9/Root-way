@@ -4,6 +4,6 @@ if(!userData){
     firstName: 'Adam',
     lastName: 'Smith',
     email: "elliot@society.com",
-    password: 21
+    password:21
 }]
 }
