@@ -6,40 +6,58 @@
     box-sizing: border-box;
 }
 :root{
-/* Cyber Neon */
---bg: #ffffff;
---surface: #11142d;
---primary: #00f7ff;
---primary-700: #00d4e4;
---accent: #ff007a;
---muted: #7d7f91;
---text: #f8faff;
+  /* Cyber Neon Fixed Contrast */
+  --bg: #f0f0f3;            /* deep dark background */
+  --surface: #161624;       /* card / panels */
+  --primary: #00f0ff;       /* neon cyan */
+  --primary-700: #00c6d9;   /* deeper cyan */
+  --accent: #ff008c;        /* hot pink */
+  --muted: #8b90a6;         /* soft gray */
+  --text: #f5f7fa;          /* off-white */
 
-}   
+  /* Navbar - HIGHER CONTRAST */
+  --navbar-bg: #1b1b3691;     /* lighter than bg, visible strip */
+  --navbar-text: #f5f7fa;
+  --navbar-hover: #00f0ff;
+  --navbar-border: #00f0ff; /* neon cyan line under navbar */
+}
+
+
 
 
 body{
     font-family: 'Inter', sans-serif;
-    background: var(--bg);
+    background:var(--bg);
     color: var(--text);
-    display: flex;
+    height: 200vh;
 }
 
 nav{
     width: 90%;
-    background: var(--surface);
+  background: var(--navbar-bg);
+  backdrop-filter: blur(10px) saturate(180%);
+  color: var(--navbar-text);
+  border: 1px solid var(--navbar-border);
+  padding: 1rem 2rem;
     display: flex;
     align-items: center;
     justify-content: space-around;
     box-shadow: 0 2px 4px var(--shadow);
     border-radius: 20px;
-    margin-top: 20px;
+    margin-top: 30px;
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
     padding: 10px 20px;
+    transition: all 0.5s ease-in-out;
 }
+nav.scrolled{
+    margin-top: 10px;
+    padding: 5px 10px;
+    width: 85%;
+    border-radius: 40px;
 
+}
 .search{
     display: flex;
     gap: 10px;
@@ -76,3 +94,31 @@ nav{
     border: 2px solid rgb(0, 174, 255);
     box-shadow: 0 0 10px #00aeff85;
 }
+
+.links {
+    display: flex;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 24px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: .3s;
+}
+.links img{
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    transition: 0.3s ease-in-out;
+}
+.links:hover{
+    color: var(--navbar-hover);
+}
+.links:hover img{
+    transform: rotate(20deg);
+}
+
+.items-in-cart{
+    color: var(--muted);
+}
+
