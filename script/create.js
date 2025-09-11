@@ -43,7 +43,7 @@ userData.push(login)
 conformMessage.classList.add('show')
 setTimeout(() =>{
 conformMessage.classList.remove('show')
-}, 900)
+}, 1000)
 }
 
 function makeObj(fn, ln, em, pas){

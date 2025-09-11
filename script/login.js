@@ -18,19 +18,19 @@ function loginValidate(user, pass){
     userData.forEach(item => {
         if(item.email === user && item.password === pass){
             error.style.color = "rgba(0, 204, 255, 0.4)"
-             error.textContent = "Access Granted"
+            error.textContent = "~Access Granted~"
             setTimeout(() =>{
-                window.location.href = '../lending.html'
+            window.location.href = '../lending.html'
             }, 500)
         }else{
-             error.textContent = "Invalid Login"
+            error.textContent = "~Invalid Login"
         }
     });
 
 
 
 }
-document.querySelector('.dont-have').addEventListener('click', ()=>{
-window.location.href = 'create.html'
-});
+    document.querySelector('.dont-have').addEventListener('click', ()=>{
+    window.location.href = 'create.html'
+    });
 

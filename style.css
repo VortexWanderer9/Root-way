@@ -232,11 +232,11 @@ body{
     text-align: center;
     padding: 5px;
     /* text-align: center; */
-    font-size: 1rem;
+    font-size: 1.6rem;
     color: red;
     /* height: 40px; */
     font-weight: 400;
-    text-shadow: 0 0 5px rgba(0, 179, 230, 0.9);    
+    user-select: none;
 }
 
 
