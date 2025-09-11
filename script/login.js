@@ -20,7 +20,7 @@ function loginValidate(user, pass){
             error.style.color = "rgba(0, 204, 255, 0.4)"
             error.textContent = "~Access Granted~"
             setTimeout(() =>{
-            window.location.href = '../lending.html'
+            window.location.href = '../main.html'
             }, 500)
         }else{
             error.textContent = "~Invalid Login"
