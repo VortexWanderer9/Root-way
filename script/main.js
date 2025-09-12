@@ -7,3 +7,10 @@ window.addEventListener('scroll', () =>{
         nav.classList.remove('scrolled')
     }
 })
+
+document.querySelector('.menu').addEventListener('click', (e) =>{
+    e.preventDefault()
+    
+    document.querySelector('.side-nav').classList.toggle('nav-active')
+    
+})

@@ -7,7 +7,7 @@
 }
 :root{
   /* Cyber Neon Fixed Contrast */
-  --bg: #f0f0f3;            /* deep dark background */
+  --bg: #1aa7a7;            /* deep dark background */
   --surface: #161624;       /* card / panels */
   --primary: #00f0ff;       /* neon cyan */
   --primary-700: #00c6d9;   /* deeper cyan */
@@ -33,9 +33,10 @@ body{
 }
 
 nav{
+     max-width: 1200px;
     width: 90%;
   background: var(--navbar-bg);
-  backdrop-filter: blur(10px) saturate(180%);
+ backdrop-filter: blur(15px) saturate(180%);
   color: var(--navbar-text);
   border: 1px solid var(--navbar-border);
   padding: 1rem 2rem;
@@ -50,7 +51,7 @@ nav{
     transform: translateX(-50%);
     padding: 10px 20px;
     transition: all 0.5s ease-in-out;
-}
+}   
 nav.scrolled{
     margin-top: 10px;
     padding: 5px 10px;
@@ -64,6 +65,9 @@ nav.scrolled{
     width: 50%;
 
 }
+.logo{
+    cursor: pointer;
+}
 
 .search input{
     width: 100%;
@@ -76,6 +80,10 @@ nav.scrolled{
      outline: none;
      font-weight: 600;
      transition: 0.3s;
+}
+.search input::placeholder{
+    color: var(--muted);
+    font-weight: 500;
 }
 .searchBtn{
     padding: 10px 20px;
@@ -94,8 +102,18 @@ nav.scrolled{
     border: 2px solid rgb(0, 174, 255);
     box-shadow: 0 0 10px #00aeff85;
 }
-
-.links {
+.links{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.return{
+    font-weight: 600;
+    font-size: 22px;
+    cursor: pointer;
+    transition: .3s;
+}
+.cart {
     display: flex;
     gap: 10px;
     font-weight: 600;
@@ -105,20 +123,64 @@ nav.scrolled{
     cursor: pointer;
     transition: .3s;
 }
-.links img{
+.return:hover{
+    color: var(--navbar-hover);
+}
+.cart img{
     width: 30px;
     height: 30px;
     object-fit: cover;
     transition: 0.3s ease-in-out;
 }
-.links:hover{
+.cart:hover{
     color: var(--navbar-hover);
 }
-.links:hover img{
+.cart:hover img{
     transform: rotate(20deg);
 }
 
 .items-in-cart{
     color: var(--muted);
 }
+.menu{
+    display: none;
+}
+.side-nav{
+    right: -100%;
+    background: var(--surface);
+    position: fixed;
+    top: 0;
+    box-shadow: -2px 0 4px var(--shadow);
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    height: 100vh;
+    width: 300px;
+    display: none;
+}
+.side-nav a{
+    color: var(--text);
+    font-size: 20px;
+    font-weight: 600;
+    transition: 0.3s;
+    text-decoration: none;
+}
 
+
+@media (max-width: 768px){
+    nav{
+        display: none;
+    }
+    .side-nav{
+        display: flex;
+    }
+    .menu{
+        display: block;
+    }
+    .side-nav.nav-active{
+        right: 0;
+    }
+
+}
