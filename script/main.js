@@ -13,4 +13,21 @@ document.querySelector('.menu').addEventListener('click', (e) =>{
     
     document.querySelector('.side-nav').classList.toggle('nav-active')
     
-})
+});
+const favIcon = document.querySelectorAll('.favorite-icon');
+
+favIcon.forEach((icon) => {
+  icon.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    // Toggle pin/unpin state
+    icon.classList.toggle('pinned');
+
+    // Update the inner image based on state
+    const isPinned = icon.classList.contains('pinned');
+    icon.innerHTML = `<img width="1" src="images/icons/favorite-${isPinned ? 'pin' : 'unpin'}.svg" alt="favorite">`;
+  });
+});
+
+
+
