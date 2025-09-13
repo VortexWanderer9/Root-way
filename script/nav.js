@@ -15,26 +15,21 @@ menuBtn.addEventListener('click', (e) =>{
     sideNav.classList.toggle('nav-active');
    closeBtn.addEventListener('click', (e) =>{
        sideNav.classList.remove('nav-active');
-    })
-    
+    });
+    console.log(menuBtn.childElementCount)
 });
-const favIcon = document.querySelectorAll('.favorite-icon');
+     
 
+
+const favIcon = document.querySelectorAll('.favorite-icon');
 favIcon.forEach((icon) => {
   icon.addEventListener('click', (e) => {
     e.preventDefault();
-
     // Toggle pin/unpin state
     icon.classList.toggle('pinned');
-
     // Update the inner image based on state
     const isPinned = icon.classList.contains('pinned');
     icon.innerHTML = `<img width="1" src="images/icons/favorite-${isPinned ? 'pin' : 'unpin'}.svg" alt="favorite">`;
   });
 });
-
-window.addEventListener('', (e) =>{
-  e.preventDefault()
-    document.querySelector('.side-nav').classList.remove('nav-active')
-})
 
