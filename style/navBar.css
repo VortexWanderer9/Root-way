@@ -125,18 +125,24 @@ nav.scrolled{
     color: var(--navbar-hover);
 }
 .cart:hover img{
-    transform: rotate(20deg);
+    transform: rotate(20deg) translateY(-10px);
 }
 
 .items-in-cart{
     color: var(--muted);
 }
 .menu{
+    width: 100%;
     display: none;
+    border-bottom: 1px solid var(--muted);
+}
+.menu img{
+    object-fit: cover;
+    transition: all 0.3s ease;
 }
 .side-nav{
     right: -100%;
-    background: var(--surface);
+    background: rebeccapurple;
     position: fixed;
     top: 0;
     box-shadow: -2px 0 4px var(--shadow);
@@ -148,6 +154,7 @@ nav.scrolled{
     height: 100vh;
     width: 300px;
     display: none;
+    overflow: hidden;
 }
 .side-nav a{
     color: var(--text);
@@ -193,6 +200,7 @@ nav.scrolled{
         display: block;
     }
     .side-nav.nav-active{
+        width: 100%;
         right: 0;
     }
 
@@ -219,87 +227,3 @@ nav.scrolled{
     transform: translateY(-5px);
 }
 
-
-main{
-    max-width: 1200px;
-    margin: 50px auto;
-}
-.container{
-    width: 100%;
-    margin: 0 auto;
-}
-.content{
-    margin-top: 20px;
-}
-.products-grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));   
-    gap: 20px; 
-}
-.card{
-    border: 1px solid var(--muted, #ddd);
-    border-radius: 12px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;    
-  background: #fff;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  transition: transform 0.2s ease; 
-}
-.card img{
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    transition: all 0.3s ease;
-}
-.card-body{
-    padding: 20px;
-  flex: 1; /* ensures consistent card heights */
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.card-title{
-    color: #161624;
-    font-size: 1.1rem;
-    font-weight: 600;margin-bottom: 10px;
-}
-.card-rating {
-  color: #f39c12;
-  font-size: 0.9rem;
-  margin-bottom: 10px;
-}
-
-.card-price {
-  font-size: 1rem;
-  font-weight: bold;
-  color: #27ae60;
-  margin-bottom: 15px;
-}
-.btn {
-  display: inline-block;
-  padding: 10px 15px;
-  background: #007bff;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background 0.2s ease;
-}
-
-.btn:hover {
-  background: #0056b3;
-}
-.favorite-icon{
-    width: 30px;
-    height: 30px;
-    user-select: none;
-    cursor: pointer;
-}
-
-.favorite-icon img{
-    width: 30px;
-    height: 30px;
-    transition: all 0.4s ease-in-out;
-}

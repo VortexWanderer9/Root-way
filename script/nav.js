@@ -7,11 +7,15 @@ window.addEventListener('scroll', () =>{
         nav.classList.remove('scrolled')
     }
 })
-
-document.querySelector('.menu').addEventListener('click', (e) =>{
+const menuBtn = document.querySelector('.menu');
+const sideNav = document.querySelector('.side-nav');
+const closeBtn =  document.querySelector('.close');
+menuBtn.addEventListener('click', (e) =>{
     e.preventDefault()
-    
-    document.querySelector('.side-nav').classList.toggle('nav-active')
+    sideNav.classList.toggle('nav-active');
+   closeBtn.addEventListener('click', (e) =>{
+       sideNav.classList.remove('nav-active');
+    })
     
 });
 const favIcon = document.querySelectorAll('.favorite-icon');
@@ -29,5 +33,8 @@ favIcon.forEach((icon) => {
   });
 });
 
-
+window.addEventListener('', (e) =>{
+  e.preventDefault()
+    document.querySelector('.side-nav').classList.remove('nav-active')
+})
 
