@@ -140,6 +140,9 @@ nav.scrolled{
     object-fit: cover;
     transition: all 0.3s ease;
 }
+.menu img:hover{
+    transform: rotate(180deg);
+}
 .side-nav{
     right: -100%;
     background: rebeccapurple;
