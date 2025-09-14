@@ -12,7 +12,7 @@ const pageHtml = document.querySelector('.products-grid');
                 <img src="images/icons/favorite-unpin.svg"alt="favorite">
             </div>
             <div class="card-price">$${(items.priceCents / 100).toFixed(2)}</div>
-            <span class="btn">Add to Cart</span>
+            <div product-data = "${items.id}" class="btn">Add to Cart</div>
           </div>
         </div>`
     });
@@ -28,5 +28,29 @@ favIcon.forEach((icon) => {
     icon.innerHTML = `<img width="100" src="images/icons/favorite-${isPinned ? 'pin' : 'unpin'}.svg" alt="favorite">`;
     console.log('fuck');
     
+  });
+});
+
+
+const addToCartButtons = document.querySelectorAll('.btn');
+const message = document.querySelector('.addToCartMessage');
+let setTimeStore; // ✅ declare outside
+
+addToCartButtons.forEach((btn) => {
+  btn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    // Show message
+    message.classList.add('add');
+
+    // Reset old timer if exists
+    if (setTimeStore) {
+      clearTimeout(setTimeStore);
+    }
+
+    // Hide after 1s
+    setTimeStore = setTimeout(() => {
+      message.classList.remove('add');
+    }, 1000);
   });
 });
