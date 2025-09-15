@@ -4,7 +4,7 @@ const pageHtml = document.querySelector('.products-grid');
     let html = '';
     products.forEach((items) => {
         html += `<div class="card">
-          <div class="product-image"><img src="${items.image}"></div>
+          <div class="product-image"><img class ="product-img" src="${items.image}"></div>
           <div class="card-body">
             <div class="card-title">${items.name}</div>
             <div class="card-rating">⭐ 4.2</div>
