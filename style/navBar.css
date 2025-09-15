@@ -29,13 +29,15 @@ body{
     font-family: 'Inter', sans-serif;
     background:var(--bg);
     color: var(--text);
-    height: 200vh;
 }
 
 nav{
      max-width: 1200px;
     width: 100%;
     margin: 0 auto;
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%);
   background: var(--navbar-bg);
  backdrop-filter: blur(15px) saturate(180%);
   color: var(--navbar-text);
@@ -46,15 +48,16 @@ nav{
     justify-content: space-around;
     box-shadow: 0 2px 4px var(--shadow);
     border-radius: 20px;
-    margin-top: 30px;
-    padding: 10px 20px;
+   top: 0;
+   margin-top: 20px;
     transition: all 0.5s ease-in-out;
+  
 }   
 nav.scrolled{
     margin-top: 10px;
     padding: 5px 10px;
-    width: 85%;
-    border-radius: 40px;
+    width: 80%;
+    border-radius: 50px;
 
 }
 .search{
@@ -105,7 +108,8 @@ nav.scrolled{
     align-items: center;
     gap: 20px;
 }
-.cart {
+.cart a {
+    text-decoration: none;
     display: flex;
     gap: 10px;
     font-weight: 600;
@@ -114,6 +118,7 @@ nav.scrolled{
     justify-content: center;
     cursor: pointer;
     transition: .3s;
+    color: var(--text);
 }
 .cart img{
     width: 30px;
@@ -122,6 +127,9 @@ nav.scrolled{
     transition: 0.3s ease-in-out;
 }
 .cart:hover{
+    color: var(--navbar-hover);
+}
+.cart:hover a{
     color: var(--navbar-hover);
 }
 .cart:hover img{
