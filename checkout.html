@@ -4,64 +4,137 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
-    <link rel="stylesheet" href="style/navBar.css">
+    <link rel="stylesheet" href="style/checkout.css">
 </head>
 <body>
-      <nav id="navbar">
-            <div class="logo">
-                <a href="main.html">
-                    <img width="60" src="images/logo/online-store-shopping-cart-svgrepo-com.svg" alt="">
-                </a>
+    <nav id="navBar">
+      <div class="header">
+        <div class="logo">
+                      <a href="main.html">
+                          <img width="60" src="images/logo/online-store-shopping-cart-svgrepo-com.svg" alt="">
+                      </a>
             </div>
-            <div class="search">
-                <input type="text" placeholder="Search">
-                <div class="searchBtn">
-                    <span>Search</span>
-                </div>
+            <div class="checkout">
+               <a href="checkout.html">
+                ( <span class="checkout-text">Checkout</span> :
+                <span class="products-count">0</span>
+                )
+               </a>
             </div>
-            <div class="links">
-                <div class="favorite">
-                   <a href="favorite.html" class="favorite">
-                    <p>Favorite</p>
-                        <img src="images/icons/subscription-svgrepo-com.svg" alt="" width="60">
-                   </a>
-                </div>
-                <div class="return">
-                    <a href="order&return.html" class="Return">
-                         <p>Return</p>
-                        <img src="images/icons/return.svg" alt="" height="40" width="40"></a>
-                </div>
-                   <div class="cart">
-                     <a href="checkout.html">
-                      <p>Cart</p>
-                    <img width="50" src="images/icons/shopping-cart-commerce-and-shopping-svgrepo-com.svg" alt="">
-                    <span>:</span>
-                    <div class="items-in-cart">2</div>
-                     </a>
-                   </div>
-        </div>
+      </div>
     </nav>
-    <div class="menu">
-        <a href=""><img src="images/icons/menu-dots.svg" alt="menu" width="80"></a>
-    </div>
-        <div class="side-nav">
-          <div class="close">
-            <img src="images/icons/close.svg" width="20" alt="close">
+
+    <main>
+
+  <div class="checkout-container">
+    <!-- Cart List -->
+    <div class="cart">
+      <h2>Your Cart</h2>
+
+      <div class="cart-item" data-price="120">
+        <img src="https://via.placeholder.com/80" alt="Wireless Headphones">
+        <div class="cart-item-details">
+          <h4>Wireless Headphones</h4>
+          <p>$120 each</p>
+          <div class="quantity-control">
+            <button class="qty-decrease">−</button>
+            <input type="number" class="qty-input" value="1" min="1">
+            <button class="qty-increase">+</button>
           </div>
-            <div class="side-links">
-              <a href="">Home</a>
-            <a href="">Contract</a>
-            <a href="">About Us</a>
-            <a href="">Products</a>
-            <a href="">Cart</a>
-            <a href="">Terms And Condition</a>
-            <a href="">Report</a>
-              <a href="favorite.html">Favorite Items</a>
-               <a href="order&return.html">Orders and Return </a>
-            </div>
-        
+        </div>
+        <div class="cart-item-price">$120</div>
+      </div>
+
+      <div class="cart-item" data-price="120">
+        <img src="https://via.placeholder.com/80" alt="Smart Watch">
+        <div class="cart-item-details">
+          <h4>Smart Watch</h4>
+          <p>$120 each</p>
+          <div class="quantity-control">
+            <button class="qty-decrease">−</button>
+            <input type="number" class="qty-input" value="2" min="1">
+            <button class="qty-increase">+</button>
+          </div>
+        </div>
+        <div class="cart-item-price">$240</div>
+      </div>
+
+      <div class="cart-item" data-price="75">
+        <img src="https://via.placeholder.com/80" alt="Backpack">
+        <div class="cart-item-details">
+          <h4>Backpack</h4>
+          <p>$75 each</p>
+          <div class="quantity-control">
+            <button class="qty-decrease">−</button>
+            <input type="number" class="qty-input" value="1" min="1">
+            <button class="qty-increase">+</button>
+          </div>
+        </div>
+        <div class="cart-item-price">$75</div>
+      </div>
+
     </div>
-    
+
+    <!-- Payment Summary -->
+    <div class="summary">
+      <h2>Order Summary</h2>
+      <div class="summary-row">
+        <span>Subtotal</span><span id="subtotal">$435</span>
+      </div>
+      <div class="summary-row">
+        <span>Tax (8%)</span><span id="tax">$34.80</span>
+      </div>
+      <div class="summary-row">
+        <span>Shipping Fee</span><span id="shipping">$15.00</span>
+      </div>
+      <div class="summary-row total">
+        <span>Total</span><span id="total">$484.80</span>
+      </div>
+
+      <div class="delivery-options">
+        <label for="delivery-method">Delivery Method</label>
+        <select id="delivery-method">
+          <option value="standard" data-fee="0">Standard (3-5 days) — Free</option>
+          <option value="express" data-fee="20">Express (1-2 days) — $20</option>
+        </select>
+
+        <label for="delivery-date">Preferred Delivery Date</label>
+        <input type="date" id="delivery-date">
+      </div>
+      <button class="checkout-btn" id="place-order-btn">Proceed to Payment</button>
+    </div>
+  </div>
+
+  <!-- Confirmation Overlay -->
+  <div class="confirm-overlay" id="confirm-overlay">
+    <div class="confirm-box">
+      <h3>✔ Order Confirmed!</h3>
+      <p>Thank you for your purchase. Your order is being processed.</p>
+      <button id="confirm-ok-btn">Ok</button>
+    </div>
+  </div>
+
+  <script>
+
+      const btnPlace = document.getElementById('place-order-btn');
+      const overlay = document.getElementById('confirm-overlay');
+      const btnOk = document.getElementById('confirm-ok-btn');
+
+
+      btnPlace.addEventListener('click', () => {
+        overlay.style.visibility = 'visible';
+        overlay.style.opacity = '1';
+      });
+
+      btnOk.addEventListener('click', () => {
+        overlay.style.opacity = '0';
+        overlay.style.visibility = 'hidden';
+      });
+
+
+  </script>
+
+</main>
+      
 </body>
-<script src="script/nav.js"></script>
 </html>
