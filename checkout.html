@@ -1,110 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout</title>
-    <link rel="stylesheet" href="style/checkout.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Checkout — Premium</title>
+  <link rel="stylesheet" href="style/checkout.css">
 </head>
+
 <body>
-    <nav id="navBar">
-      <div class="header">
-        <div class="logo">
-                      <a href="main.html">
-                          <img width="60" src="images/logo/online-store-shopping-cart-svgrepo-com.svg" alt="">
-                      </a>
-            </div>
-            <div class="checkout">
-               <a href="checkout.html">
-                ( <span class="checkout-text">Checkout</span> :
-                <span class="products-count">0</span>
-                )
-               </a>
-            </div>
-      </div>
-    </nav>
-
-    <main>
-
   <div class="checkout-container">
-    <!-- Cart List -->
     <div class="cart">
-      <h2>Your Cart</h2>
-
-      <div class="cart-item" data-price="120">
-        <img src="https://via.placeholder.com/80" alt="Wireless Headphones">
-        <div class="cart-item-details">
-          <h4>Wireless Headphones</h4>
-          <p>$120 each</p>
-          <div class="quantity-control">
-            <button class="qty-decrease">−</button>
-            <input type="number" class="qty-input" value="1" min="1">
-            <button class="qty-increase">+</button>
+      <h1 class="text">Your cart</h1>
+      <div class="cart-item">
+         <h1 class="date">Delivery date: Saturday September 20</h1>
+        <div class="body-part">
+          <img src="images/products/6-piece-non-stick-baking-set.webp" alt="product">
+          <div class="cart-item-details">
+            <p class="product-name">6-Piece Nonstick, Carbon Steel Oven Bakeware Baking Set</p>
+            <p class="cart-price">$12.23</p>
+            <div class="extra-info">
+            <p class="item-quantity">Quantity: 12</p>
+            <div class="delete-button">Delete</div>
+            <div class="update-button">Update</div>
+            <input type="number">
+            </div>
           </div>
         </div>
-        <div class="cart-item-price">$120</div>
-      </div>
+    
 
-      <div class="cart-item" data-price="120">
-        <img src="https://via.placeholder.com/80" alt="Smart Watch">
-        <div class="cart-item-details">
-          <h4>Smart Watch</h4>
-          <p>$120 each</p>
-          <div class="quantity-control">
-            <button class="qty-decrease">−</button>
-            <input type="number" class="qty-input" value="2" min="1">
-            <button class="qty-increase">+</button>
+  <div class="delivery-options">
+  <h2>Choose a delivery option:</h2>
+  <div class="week">
+    <input id="seven-days" name="delivery" type="radio">
+    <label for="seven-days">Wednesday September 24</label>
+   <div class="charge">Free - Shipping</div>
+  </div>
+  <div class="three">
+    <input id="three-days" name="delivery" type="radio">
+    <label for="three-days">Saturday September 20</label>
+    <div class="charge">$4.99 - Shipping</div>
+  </div>
+  <div class="one">
+    <input id="one-day" name="delivery" type="radio">
+    <label for="one-day">Thursday September 18</label>
+    <div class="charge">$7.99 - Shipping</div>
+  </div>
+</div>
+</div>
+<div class="cart-item">
+         <h1 class="date">Delivery date: Saturday September 20</h1>
+        <div class="body-part">
+          <img src="images/products/6-piece-non-stick-baking-set.webp" alt="product">
+          <div class="cart-item-details">
+            <p class="product-name">6-Piece Nonstick, Carbon Steel Oven Bakeware Baking Set</p>
+            <p class="cart-price">$12.23</p>
+            <div class="extra-info">
+            <p class="item-quantity">Quantity: 12</p>
+            <div class="delete-button">Delete</div>
+            <div class="update-button">Update</div>
+            <input type="number">
+            </div>
           </div>
         </div>
-        <div class="cart-item-price">$240</div>
-      </div>
-
-      <div class="cart-item" data-price="75">
-        <img src="https://via.placeholder.com/80" alt="Backpack">
-        <div class="cart-item-details">
-          <h4>Backpack</h4>
-          <p>$75 each</p>
-          <div class="quantity-control">
-            <button class="qty-decrease">−</button>
-            <input type="number" class="qty-input" value="1" min="1">
-            <button class="qty-increase">+</button>
-          </div>
-        </div>
-        <div class="cart-item-price">$75</div>
-      </div>
-
-    </div>
-
-    <!-- Payment Summary -->
-    <div class="summary">
+  <div class="delivery-options">
+  <h2>Choose a delivery option:</h2>
+  <div class="week">
+    <input id="seven-days" name="delivery" type="radio">
+    <label for="seven-days">Wednesday September 24</label>
+   <div class="charge">Free - Shipping</div>
+  </div>
+  <div class="three">
+    <input id="three-days" name="delivery" type="radio">
+    <label for="three-days">Saturday September 20</label>
+    <div class="charge">$4.99 - Shipping</div>
+  </div>
+  <div class="one">
+    <input id="one-day" name="delivery" type="radio">
+    <label for="one-day">Thursday September 18</label>
+    <div class="charge">$7.99 - Shipping</div>
+  </div>
+</div>
+</div>
+</div>
+     <div class="summary">
       <h2>Order Summary</h2>
+      <div class="summary-container">
+        <div class="summary-row">
+        <div>Items:</div><div id="subtotal">$435
+      </div> </div>
       <div class="summary-row">
-        <span>Subtotal</span><span id="subtotal">$435</span>
+        <div id="shipping">Shipping & handling:</div><div id="shipping">$4.80</>
+      </div>
+       </div>
+        <div class="summary-row">
+        <div class="total-before">Total Before Tax:</div><div id="total">$484.80</div>
       </div>
       <div class="summary-row">
-        <span>Tax (8%)</span><span id="tax">$34.80</span>
-      </div>
-      <div class="summary-row">
-        <span>Shipping Fee</span><span id="shipping">$15.00</span>
+        <div id="tax">Tax (8%):</div><div id="tax">$34.80</div>
       </div>
       <div class="summary-row total">
-        <span>Total</span><span id="total">$484.80</span>
+        <div>Total:</div><div id="total">$500.80</div>
       </div>
-
       <button class="checkout-btn" id="place-order-btn">Proceed to Payment</button>
+      </div>
+      
     </div>
   </div>
-
-  <!-- Confirmation Overlay -->
-  <div class="confirm-overlay" id="confirm-overlay">
+ <div class="confirm-overlay" id="confirm-overlay">
     <div class="confirm-box">
       <h3>✔ Order Confirmed!</h3>
       <p>Thank you for your purchase. Your order is being processed.</p>
       <button id="confirm-ok-btn">Ok</button>
     </div>
   </div>
-
-  <script>
+</body>
+ <script>
 
       const btnPlace = document.getElementById('place-order-btn');
       const overlay = document.getElementById('confirm-overlay');
@@ -124,7 +134,4 @@
 
   </script>
 
-</main>
-      
-</body>
 </html>
