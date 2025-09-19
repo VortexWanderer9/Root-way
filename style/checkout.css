@@ -164,32 +164,51 @@ input[type="radio"]:checked::after {
   border-radius: 50%;
 }
 .summary{
-    border: 1px solid black;
-    height: 400px;
-    padding: 20px;
-    margin-top: 60px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  
 }
 .summary h2{
     color: #4f46e5;
     position: relative;
+    margin-bottom: 20px;
 }
 .summary h2::after{
     content: "";
     position: absolute;
-    bottom: -2px;
+    bottom: -6px;
     width: 50px;
-    height: 6px;
-    background-color: rgb(0, 255, 221);
+    height: 2px;
+    background-color: rgb(55, 0, 255);
     left: 6px;
     border-radius: 50px;
+    transition: all .5s ease;
+}
+.summary h2:hover::after{
+  width: 100%;
 }
 .summary-row{
     font-size: 16px;
     
 }
+
+.summary-container{
+  padding: 20px;
+  border: 1px solid var(--color-grey-dark);
+  border-radius: 5px;
+}
+.summary-row{
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+    margin-top: 10px;
+}
+.summary-row.total{
+  font-size: 22px;
+  color: var(--color-primary);
+   border-top: 2px solid var(--color-grey-dark);
+   padding: 10px;
+   font-weight: 600;
+}
+
     .confirm-overlay {
       position: fixed;
       top:0; left:0; right:0; bottom:0;
@@ -220,6 +239,16 @@ input[type="radio"]:checked::after {
       font-size: 1.1rem;
       color: var(--color-grey-dark);
       margin-bottom: 1.5rem;
+    }
+    .checkout-btn{
+      padding: 0.8rem 1.5rem;
+      font-weight: 600;
+      border-radius: 10px;
+      font-size: 1rem;
+      border: none;
+      color: #ffffff;
+      cursor: pointer;
+      background-color: #4f46e5;
     }
     .confirm-box button {
       padding: 0.8rem 1.5rem;
