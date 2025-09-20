@@ -11,7 +11,9 @@
   <nav id="nav-bar">
     <div class="nav-links">
       <div class="logo">
-        <img src="images/logo/online-store-shopping-cart-svgrepo-com.svg" width="40" alt="logo">
+       <a href="main.html">
+         <img src="images/logo/online-store-shopping-cart-svgrepo-com.svg" width="40" alt="logo">
+       </a>
       </div>
       <div class="middle-text">
        <a href="main.html">(<span>Checkout:</span>
@@ -123,32 +125,29 @@
       
     </div>
   </div>
- <div class="confirm-overlay" id="confirm-overlay">
-    <div class="confirm-box">
-      <h3>✔ Order Confirmed!</h3>
-      <p>Thank you for your purchase. Your order is being processed.</p>
-      <button id="confirm-ok-btn">Ok</button>
+  <div class="confirm-msz">
+    <div class="notification">
+      <img src="images/tick-circle-svgrepo-com.svg" width="20" alt="">
+      <span>Your order has been placed successfully!</span>
     </div>
   </div>
+
 </body>
  <script>
 
       const btnPlace = document.getElementById('place-order-btn');
-      const overlay = document.getElementById('confirm-overlay');
-      const btnOk = document.getElementById('confirm-ok-btn');
-
+      const notification = document.querySelector('.confirm-msz');
+      let setTimeStore;
 
       btnPlace.addEventListener('click', () => {
-        overlay.style.visibility = 'visible';
-        overlay.style.opacity = '1';
+        notification.classList.add('show');
+        if(setTimeStore){
+          clearInterval(setTimeStore)
+        }
+       setTimeStore = setInterval(() =>{
+          notification.classList.remove('show');
+        }, 2000)
       });
-
-      btnOk.addEventListener('click', () => {
-        overlay.style.opacity = '0';
-        overlay.style.visibility = 'hidden';
-      });
-
-
   </script>
 
 </html>

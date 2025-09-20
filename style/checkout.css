@@ -250,37 +250,6 @@ input[type="radio"]:checked::after {
    font-weight: 600;
 }
 
-    .confirm-overlay {
-      position: fixed;
-      top:0; left:0; right:0; bottom:0;
-      background: rgba(0,0,0,0.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      visibility: hidden;
-      opacity: 0;
-      transition: opacity 0.4s ease, visibility 0.4s;
-      z-index: 1000;
-    }
-    .confirm-box {
-      background: var(--color-white);
-      padding: 2rem 3rem;
-      border-radius: 12px;
-      text-align: center;
-      max-width: 400px;
-      /* box-shadow: 0 8px 30px var(--shadow-medium); */
-      animation: scaleIn 0.5s forwards;
-    }
-    .confirm-box h3 {
-      font-size: 1.8rem;
-      color: var(--color-primary);
-      margin-bottom: 1rem;
-    }
-    .confirm-box p {
-      font-size: 1.1rem;
-      color: var(--color-grey-dark);
-      margin-bottom: 1.5rem;
-    }
     .checkout-btn{
       padding: 0.8rem 1.5rem;
       font-weight: 600;
@@ -291,26 +260,36 @@ input[type="radio"]:checked::after {
       cursor: pointer;
       background-color: #4f46e5;
     }
-    .confirm-box button {
-      padding: 0.8rem 1.5rem;
-      font-size: 1rem;
-      background: var(--color-accent);
-      color: var(--color-white);
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background var(--transition);
-    }
-    .confirm-box button:hover {
-      background: #ff9c00;
-    }
-    @keyframes scaleIn {
-      from {
-        transform: scale(0.7);
-        opacity: 0;
-      }
-      to {
-        transform: scale(1);
-        opacity: 1;
-      }
-    }
+  
+.confirm-msz{
+background-color: green;
+position: fixed;
+top: 0;
+right: 10px;
+color: white;
+padding: 10px 20px;
+font-weight: 600;
+margin-top: 20px;
+opacity: 0;
+transition: all .5s ease;
+border-radius: 5px;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.notification{
+  display: flex;
+  gap: 10px;
+}
+ .notification img{
+  width: 20px;
+  height: 20px;
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+  transition: all .5s ease;
+ }
+
+.confirm-msz.show{
+  opacity: 1;
+  transition: all .5s ease;
+}
+.confirm-msz.show img{
+  transform: rotate(360deg) scale(1.5);
+}
