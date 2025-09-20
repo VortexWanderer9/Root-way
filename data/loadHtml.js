@@ -1,9 +1,10 @@
 import { products } from "./product.js"; 
+import { cart} from "../data/cart.js"
 
 const pageHtml = document.querySelector('.products-grid');
     let html = '';
     products.forEach((items) => {
-        html += `<div class="card">
+        html += `<div class="card"  product-data = "${items.id}" >
           <div class="product-image"><img class ="product-img" src="${items.image}"></div>
           <div class="card-body">
             <div class="card-title">${items.name}</div>
@@ -18,6 +19,8 @@ const pageHtml = document.querySelector('.products-grid');
     });
     pageHtml.innerHTML = html;
 
+
+
 const favIcon = document.querySelectorAll('.favorite-icon');
 favIcon.forEach((icon) => {
   icon.addEventListener('click', (e) => {
@@ -26,8 +29,6 @@ favIcon.forEach((icon) => {
     // Update the inner image based on state
     const isPinned = icon.classList.contains('pinned');
     icon.innerHTML = `<img width="100" src="images/icons/favorite-${isPinned ? 'pin' : 'unpin'}.svg" alt="favorite">`;
-    console.log('fuck');
-    
   });
 });
 
@@ -39,7 +40,14 @@ let setTimeStore; // ✅ declare outside
 addToCartButtons.forEach((btn) => {
   btn.addEventListener('click', (e) => {
     e.preventDefault();
-
+    const productId = btn.getAttribute('product-data');
+    const product = products.find((p) => p.id === productId);
+    if(product) {
+      cart.push(product);
+      console.log(cart);
+      
+    }
+    
     // Show message
     message.classList.add('add');
 
