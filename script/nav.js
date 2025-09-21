@@ -1,3 +1,4 @@
+
 const nav = document.getElementById('navbar');
 window.addEventListener('scroll', () =>{
     if(window.scrollY > 80){

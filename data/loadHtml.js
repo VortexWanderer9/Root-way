@@ -1,5 +1,6 @@
 import { products } from "./product.js"; 
-import { cart} from "../data/cart.js"
+import { cart, addToCart} from "../data/cart.js"
+
 
 const pageHtml = document.querySelector('.products-grid');
     let html = '';
@@ -42,16 +43,11 @@ addToCartButtons.forEach((btn) => {
     e.preventDefault();
     const productId = btn.getAttribute('product-data');
     const product = products.find((p) => p.id === productId);
-    if(product) {
-      cart.push(product);
-      console.log(cart);
-      
-    }
+    addToCart(product.id, 1); 
+
     
     // Show message
     message.classList.add('add');
-
-    // Reset old timer if exists
     if (setTimeStore) {
       clearTimeout(setTimeStore);
     }
@@ -62,3 +58,4 @@ addToCartButtons.forEach((btn) => {
     }, 2000);
   });
 });
+
