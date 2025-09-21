@@ -59,6 +59,6 @@ addToCartButtons.forEach((btn) => {
     // Hide after 1s
     setTimeStore = setTimeout(() => {
       message.classList.remove('add'); 
-    }, 1000);
+    }, 2000);
   });
 });
