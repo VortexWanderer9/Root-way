@@ -1,5 +1,6 @@
 import { products } from "./product.js"; 
 import { cart, addToCart} from "../data/cart.js"
+import {updateHeader} from "../script/header.js"
 
 
 const pageHtml = document.querySelector('.products-grid');
@@ -44,7 +45,7 @@ addToCartButtons.forEach((btn) => {
     const productId = btn.getAttribute('product-data');
     const product = products.find((p) => p.id === productId);
     addToCart(product.id, 1); 
-
+    updateHeader()
     
     // Show message
     message.classList.add('add');
