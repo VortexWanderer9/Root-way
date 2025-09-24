@@ -36,3 +36,10 @@ export function addToCart(productId, quantity){
     }
     addToLocalStorage();
 }
+const updateButton = document.querySelectorAll('.update-button');
+updateButton.forEach((btn) =>{
+    btn.addEventListener('click', (e) =>{
+        document.querySelector('.cart-item-details input').classList.toggle('display');
+   });
+});
+    

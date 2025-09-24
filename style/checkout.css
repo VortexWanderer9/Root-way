@@ -152,9 +152,12 @@ body{
     width: 50px;
     outline: none;
     border: 1px solid gray;
-    padding: 0 5px;
+   padding: 10px;
     border-radius: 20px;
     display: none;
+    height: 10px;
+}.cart-item-details input.display{
+display: block;
 }
 .delivery-options{
     border-top: 2px solid rgba(128, 128, 128, 0.562);
