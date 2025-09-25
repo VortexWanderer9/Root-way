@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Favorite Items</title>
     <link rel="stylesheet" href="style/navBar.css">
+    <link rel="stylesheet" href="style/favorite.css">
 </head>
 <body>
+    <div class="grid-back"></div>
     <nav id="navbar">
             <div class="logo">
                 <a href="main.html">
@@ -21,9 +23,9 @@
             </div>
             <div class="links">
                 <div class="favorite">
-                   <a href="favorite.html" class="favorite">
-                    <p>Favorite</p>
-                        <img src="images/icons/subscription-svgrepo-com.svg" alt="" width="60">
+                   <a href="checkout.html" class="favorite">
+                    <p>Cart</p>
+                         <img width="30" src="images/icons/shopping-cart-commerce-and-shopping-svgrepo-com.svg" alt="">
                    </a>
                 </div>
                 <div class="return">
@@ -32,9 +34,9 @@
                         <img src="images/icons/return.svg" alt="" height="40" width="40"></a>
                 </div>
                    <div class="cart">
-                   <a href="checkout.html">
-                      <p>Cart</p>
-                    <img width="50" src="images/icons/shopping-cart-commerce-and-shopping-svgrepo-com.svg" alt="">
+                   <a href="favorite.html">
+                      <p>Favorite</p>
+                    <img src="images/icons/subscription-svgrepo-com.svg" alt="" width="80">
                     <span>:</span>
                     <div class="items-in-cart">2</div>
                      </a>
@@ -56,6 +58,51 @@
             <a href="order&return.html">Orders and Return </a>
         
     </div>
+
+    <div class="favorite-item-container">
+        <h1>Your Favorite Items</h1>
+        <div class="favorite-items">
+            <div class="favorite-item">
+                <div class="favorite-image">
+                    <img src="images/products/6-piece-non-stick-baking-set.webp" alt="">
+                </div>
+                <div class="item-details">
+                    <h2>6 Piece Non Stick Baking Set</h2>
+                    <button class="remove-btn">Remove</button>
+                </div>
+            </div>
+            <div class="favorite-item">
+                <div class="favorite-image">
+                    <img src="images/products/6-piece-white-dinner-plate-set.jpg" alt="">
+                </div>
+                <div class="item-details">
+                    <h2>6 Piece White Dinner Plate Set</h2>
+                    <button class="remove-btn">Remove</button>
+                </div>
+            </div>
+
+            <div class="favorite-item">
+                <div class="favorite-image">
+                    <img src="images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg" alt="">
+                </div>
+                <div class="item-details">
+                    <h2>Adults Plain Cotton T-Shirt (2 Pack)</h2>
+                    <button class="remove-btn">Remove</button>
+                </div>
+            </div>
+            <div class="favorite-item">
+                <div class="favorite-image">
+                    <img src="images/products//coffeemaker-with-glass-carafe-black.jpg" alt="">
+                </div>
+                <div class="item-details">
+                    <h2>Coffeemaker with Glass Carafe (Black)</h2>
+                    <button class="remove-btn">Remove</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </body>
 <script src="script/nav.js"></script>
+<script type="module" src="script/favorite.js" ></script>
 </html>
