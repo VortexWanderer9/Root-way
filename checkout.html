@@ -37,23 +37,7 @@
      <div class="summary">
       <h2>Order Summary</h2>
       <div class="summary-container">
-        <div class="summary-row">
-        <div>Items:</div><div id="subtotal">$435
-      </div> </div>
-      <div class="summary-row">
-        <div id="shipping">Shipping & handling:</div><div id="shipping">$4.80</>
-      </div>
-       </div>
-        <div class="summary-row">
-        <div class="total-before">Total Before Tax:</div><div id="total">$484.80</div>
-      </div>
-      <div class="summary-row">
-        <div id="tax">Tax (8%):</div><div id="tax">$34.80</div>
-      </div>
-      <div class="summary-row total">
-        <div>Total:</div><div id="total">$500.80</div>
-      </div>
-      <button class="checkout-btn" id="place-order-btn">Proceed to Payment</button>
+        
       </div>
       
     </div>
@@ -67,21 +51,10 @@
 
 </body>
  <script>
-      const btnPlace = document.getElementById('place-order-btn');
-      const notification = document.querySelector('.confirm-msz');
-      let setTimeStore;
 
-      btnPlace.addEventListener('click', () => {
-        notification.classList.add('show');
-        if(setTimeStore){
-          clearInterval(setTimeStore)
-        }
-       setTimeStore = setInterval(() =>{
-          notification.classList.remove('show');
-        }, 2000)
-      });
   </script>
   <script type="module" src="script/checkout.js"></script>
   <script type="module" src="data/cart.js"></script>
   <script type="module" src="script/header.js"></script>
+  <script type="module" src="script/unite/formatPrice.js"></script>
 </html>
