@@ -42,4 +42,14 @@ updateButton.forEach((btn) =>{
         document.querySelector('.cart-item-details input').classList.toggle('display');
    });
 });
-    
+
+    export function removeFromCart(productId){
+        let newCart = [];
+        cart.forEach((item) =>{
+            if(item.productId !== productId){
+                newCart.push(item)
+            }
+        })
+    cart = newCart;
+    addToLocalStorage()
+    }
