@@ -17,7 +17,6 @@ menuBtn.addEventListener('click', (e) =>{
    closeBtn.addEventListener('click', (e) =>{
        sideNav.classList.remove('nav-active');
     });
-    console.log(menuBtn.childElementCount)
 });
 
 

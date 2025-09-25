@@ -55,8 +55,8 @@ nav{
 }   
 nav.scrolled{
     margin-top: 10px;
-    padding: 5px 10px;
-    width: 80%;
+    padding: px 10px;
+    width: 90%;
     border-radius: 50px;
 
 }
@@ -180,6 +180,10 @@ nav.scrolled{
     transition: 0.3s;
     text-decoration: none;
 }
+.side-nav a:hover{
+    transform: translateX(10px);
+    color: var(--muted);
+}
 .favorite a{
     text-decoration: none;
     color: var(--text);
@@ -206,7 +210,7 @@ nav.scrolled{
     transform: translateY(-5px);
 }
 
-@media (max-width: 768px){
+@media (max-width: 900px){
     nav{
         display: none;
     }

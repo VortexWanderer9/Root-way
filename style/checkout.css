@@ -103,6 +103,7 @@ body{
     border-radius: 5px;
     margin-top: 20px;
 }
+
 .cart-item h1{
     font-size: 24px;
     color: green;
@@ -220,7 +221,7 @@ input[type="radio"]:checked::after {
     position: absolute;
     bottom: -6px;
     width: 50px;
-    height: 2px;
+    height: 4px;
     background-color: rgb(55, 0, 255);
     left: 6px;
     border-radius: 50px;
@@ -231,7 +232,6 @@ input[type="radio"]:checked::after {
 }
 .summary-row{
     font-size: 16px;
-    
 }
 
 .summary-container{
