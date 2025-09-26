@@ -1,17 +1,19 @@
 import { products } from "./product.js"; 
 import { cart, addToCart} from "../data/cart.js"
 import {updateHeader} from "../script/header.js"
+import { addToFavorite, favorite } from '../data/favorite.js'
+console.log(favorite);
 
 
 const pageHtml = document.querySelector('.products-grid');
     let html = '';
     products.forEach((items) => {
-        html += `<div class="card"  product-data = "${items.id}" >
+        html += `<div class="card" product-data = "${items.id}" >
           <div class="product-image"><img class ="product-img" src="${items.image}"></div>
           <div class="card-body">
             <div class="card-title">${items.name}</div>
             <div class="card-rating">⭐ 4.2</div>
-             <div class="favorite-icon">
+             <div class="favorite-icon" product-id="${items.id}">
                 <img src="images/icons/favorite-unpin.svg"alt="favorite">
             </div>
             <div class="card-price">$${(items.priceCents / 100).toFixed(2)}</div>
@@ -31,6 +33,13 @@ favIcon.forEach((icon) => {
     // Update the inner image based on state
     const isPinned = icon.classList.contains('pinned');
     icon.innerHTML = `<img width="100" src="images/icons/favorite-${isPinned ? 'pin' : 'unpin'}.svg" alt="favorite">`;
+    const product = icon.getAttribute('product-id')
+    if(isPinned){
+      console.log(product);
+    addToFavorite(product)
+    console.log(favorite);
+    }
+    
   });
 });
 
