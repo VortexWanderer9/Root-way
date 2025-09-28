@@ -24,7 +24,18 @@ export function addToFavorite(productId){
  function localStorageFav(){
     localStorage.setItem('favorite', JSON.stringify(favorite))
 }
-localStorageFav()
+localStorageFav();
+
+export function removeFromFav(productId){
+    let newFavItm = [];
+    favorite.forEach((itm) =>{
+        if(itm.productId !== productId){
+            newFavItm.push(itm)
+        }
+    });
+    favorite = newFavItm;
+    localStorageFav();
+}
 
 
 // export let favorite = [];
