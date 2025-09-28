@@ -12,7 +12,8 @@ getFavoriteItem()
 export function addToFavorite(productId){
     let matchingProduct = favorite.find(p  => p.productId === productId);
     if(matchingProduct){
-        alert('This product already Exist')
+   console.log('This Product Already Exist on Favorite');
+   
     }else{
         favorite.push({
             productId: productId

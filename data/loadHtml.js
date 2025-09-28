@@ -1,9 +1,7 @@
 import { products } from "./product.js"; 
 import { cart, addToCart} from "../data/cart.js"
 import {updateHeader} from "../script/header.js"
-import { addToFavorite, favorite } from '../data/favorite.js'
-console.log(favorite);
-
+import { addToFavorite, favorite , removeFromFav} from '../data/favorite.js'
 
 const pageHtml = document.querySelector('.products-grid');
     let html = '';
@@ -35,9 +33,10 @@ favIcon.forEach((icon) => {
     icon.innerHTML = `<img width="100" src="images/icons/favorite-${isPinned ? 'pin' : 'unpin'}.svg" alt="favorite">`;
     const product = icon.getAttribute('product-id')
     if(isPinned){
-      console.log(product);
     addToFavorite(product)
-    console.log(favorite);
+    }
+    if(!isPinned){
+      removeFromFav(product)
     }
     
   });
