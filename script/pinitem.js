@@ -18,9 +18,10 @@ export function renderFavoriteItem(){
             </div>
     `
  })
- containerFav.innerHTML = favoriteHtml
+ containerFav.innerHTML = favoriteHtml;
 }
 renderFavoriteItem();
+updateHeader()
 
 
 document.querySelectorAll('.remove-btn').forEach((item) =>{
@@ -29,9 +30,13 @@ document.querySelectorAll('.remove-btn').forEach((item) =>{
         console.log(productId);
         const container = document.querySelector(`.js-fav-${productId}`)
         container.remove();
-        removeFromFav(productId)
+        removeFromFav(productId);
+        updateHeader()
     })
     
-})
+});
  
 
+function updateHeader(){
+ document.querySelector('.js-fav-count').innerHTML = `${favorite.length}`
+}
