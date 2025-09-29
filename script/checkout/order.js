@@ -14,7 +14,7 @@ export function renderOrderSummary(){
         html += `
          <div class="cart-item js-cart-item-${product.id}"><h1 class="date">Delivery date: Saturday September 20</h1>
         <div class="body-part">
-          <img src="${product.image}" alt="product">
+          <div class="checkout-image"><img src="${product.image}" alt="product"></div>
           <div class="cart-item-details">
             <p class="product-name">${product.name}</p>
             <p class="cart-price">$${(product.priceCents / 100).toFixed(2)}</p>

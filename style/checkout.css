@@ -11,9 +11,6 @@ body{
 font-family: 'Inter', sans-serif;
 }
 
-
-
-
     :root {
       --color-bg: #f3f6fb;
       --color-white: #ffffff;
@@ -115,10 +112,18 @@ body{
     margin-top: 20px;
      font-weight: 600;
 }
-.body-part img{
-    height: 100px;
-    width: 100px;
+.checkout-image{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
 }
+.body-part img{
+   max-width: 100%;
+   max-height: 100%;
+}
+
 .product-name{
     font-size: 20px;
     color:rgb(43, 1, 1);
