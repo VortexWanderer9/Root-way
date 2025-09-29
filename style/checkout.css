@@ -154,7 +154,8 @@ body{
 .update-button:hover{
     color: gray;
 }
-.cart-item-details input{
+
+.cart-item  input{
     width: 50px;
     outline: none;
     border: 1px solid gray;
@@ -162,9 +163,13 @@ body{
     border-radius: 20px;
     display: none;
     height: 10px;
-}.cart-item-details input.display{
-display: block;
 }
+.cart-item input.show{
+    display: block;
+}
+
+
+
 .delivery-options{
     border-top: 2px solid rgba(128, 128, 128, 0.562);
     margin-top:10px;

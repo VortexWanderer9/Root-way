@@ -33,12 +33,6 @@ export function addToCart(productId, quantity){
     }
     addToLocalStorage();
 }
-const updateButton = document.querySelectorAll('.update-button');
-updateButton.forEach((btn) =>{
-    btn.addEventListener('click', (e) =>{
-        document.querySelector('.cart-item-details input').classList.toggle('display');
-   });
-});
 
     export function removeFromCart(productId){
         let newCart = [];
@@ -50,3 +44,15 @@ updateButton.forEach((btn) =>{
     cart = newCart;
     addToLocalStorage()
     }
+
+export function updateQuantity(productId, quantity){
+    let matchingProduct = cart.find(item => item.productId === productId);
+  const newQuantity = Number(quantity)
+    if(newQuantity <= 0) return;
+
+    if(matchingProduct){
+        matchingProduct.quantity = newQuantity;
+    }
+    addToLocalStorage();
+}
+

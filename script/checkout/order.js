@@ -1,4 +1,4 @@
-import {cart ,removeFromCart} from '../../data/cart.js'
+import {cart ,removeFromCart, updateQuantity} from '../../data/cart.js'
 import {products} from '../../data/product.js'
 import { updateHeader} from '../../script/../script/header.js'
 import {renderPaymentSummary} from './paymentSummary.js'
@@ -21,9 +21,8 @@ export function renderOrderSummary(){
             <div class="extra-info">
             <p class="item-quantity">Quantity: ${item.quantity}</p>
             <div class="delete-button js-delete" product-data ="${product.id}">Delete</div>
-            <div class="update-button js-update">Update</div>
-            <input class="input" type="number" value="${item.quantity}">
-            </div>
+            <div class="update-button js-update-${product.id}" product-data ="${product.id}">Update</div>
+            <input class="input" type="number" value="0"></div>
           </div>
         </div>
         </div>`;
@@ -40,7 +39,35 @@ document.querySelectorAll('.js-delete').forEach((item) =>{
    updateHeader()
    renderPaymentSummary()
   })
-})
+});
+
+const updateButton = document.querySelectorAll('.update-button');
+updateButton.forEach((btn) =>{
+    btn.addEventListener('click', (e) =>{
+        const productId = btn.getAttribute('product-data')
+         const container = document.querySelector(`.js-cart-item-${productId}`);
+         const inputField = container.querySelector('input');
+         inputField.classList.toggle('show');
+         if(inputField.classList.contains('show')){
+           btn.innerHTML = "OK"
+         }else{
+           btn.innerHTML = "Update"
+         }
+            const newQuantity = inputField.value;
+            updateQuantity(productId, Number(newQuantity));
+            inputField.value = 0;
+         renderPaymentSummary();
+         updateHeader()
+        console.log(cart);
+        inputField.addEventListener('keydown', (e) =>{
+          if(e.key === "Enter"){
+            renderOrderSummary();
+          }
+        })
+   });
+
+
+});
 }
 
 
