@@ -57,6 +57,9 @@ addToCartButtons.forEach((btn) => {
     
     // Show message
     message.classList.add('add');
+    document.querySelector('.add').addEventListener('click', () =>{
+      window.location = "checkout.html"
+    })
     if (setTimeStore) {
       clearTimeout(setTimeStore);
     }
@@ -64,7 +67,7 @@ addToCartButtons.forEach((btn) => {
     // Hide after 1s
     setTimeStore = setTimeout(() => {
       message.classList.remove('add'); 
-    }, 400);
+    }, 800);
   });
 });
 
