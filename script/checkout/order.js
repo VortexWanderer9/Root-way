@@ -5,9 +5,8 @@ import {renderPaymentSummary} from './paymentSummary.js'
 const container = document.querySelector('.checkout-js-html');
 import { checkCartLength } from './isCartEmpty.js';
 
-let html = "";
-
 export function renderOrderSummary(){
+let html = "";
     cart.forEach((item) => {
     let product = products.find(p => p.id === item.productId);
     if(product) {
@@ -21,12 +20,13 @@ export function renderOrderSummary(){
             <div class="extra-info">
             <p class="item-quantity">Quantity: ${item.quantity}</p>
             <div class="delete-button js-delete" product-data ="${product.id}">Delete</div>
+          </div>
+          </div>
         </div>
         </div>`;
     }
 });
 container.innerHTML = html;
-
 document.querySelectorAll('.js-delete').forEach((item) =>{
   item.addEventListener('click', (e) =>{
    let productId = item.getAttribute('product-data');
@@ -35,7 +35,7 @@ document.querySelectorAll('.js-delete').forEach((item) =>{
    container.remove()
    updateHeader()
    renderPaymentSummary();
-   checkCartLength()
+   checkCartLength();
   })
 });
 };

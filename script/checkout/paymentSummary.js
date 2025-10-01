@@ -1,6 +1,9 @@
-import {cart} from '../../data/cart.js'
+import {cart, clearCartItem} from '../../data/cart.js'
 import { cartProduct } from '../../data/product.js'
 import { formatPrice} from '../unite/formatPrice.js'
+import { updateHeader } from '../../script/header.js'
+import { renderOrderSummary } from './order.js'
+import {checkCartLength} from './isCartEmpty.js'
   
 export function renderPaymentSummary(){
   let productsPriceCents = 0;
@@ -29,6 +32,10 @@ export function renderPaymentSummary(){
       let setTimeStore;
 
       btnPlace.addEventListener('click', () => {
+        if(cart.length === 0){
+          notification.innerHTML = 'Cart is Empty'
+        } 
+        if(cart.length > 0){}
         notification.classList.add('show');
         if(setTimeStore){
           clearInterval(setTimeStore)
@@ -36,6 +43,14 @@ export function renderPaymentSummary(){
        setTimeStore = setInterval(() =>{
           notification.classList.remove('show');
         }, 2000)
+        
+      setInterval(() =>{
+        clearCartItem();
+        renderPaymentSummary();
+        renderOrderSummary();
+        updateHeader();
+        checkCartLength();
+      }, 200);
       });
 }
 

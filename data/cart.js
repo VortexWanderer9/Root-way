@@ -54,5 +54,11 @@ export function updateQuantity(productId, quantity){
         matchingProduct.quantity = newQuantity;
     }
     addToLocalStorage();
+};
+
+export function clearCartItem(){
+   let newCart = [];
+    cart = newCart;
+    addToLocalStorage();
 }
 
