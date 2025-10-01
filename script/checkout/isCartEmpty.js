@@ -9,4 +9,9 @@ export function checkCartLength(){
       con.innerHTML = html
     }
 }
-checkCartLength()
+checkCartLength();
+
+
+con.addEventListener('click', (e) =>{
+    window.location.href = 'main.html'
+})

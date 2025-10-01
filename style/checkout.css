@@ -290,6 +290,7 @@ box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .notification{
   display: flex;
+  align-items: center;
   gap: 10px;
 }
  .notification img{
@@ -317,4 +318,13 @@ box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   color: #4f46e5;
  font-weight: 600;
 
+}
+
+@media  screen and (max-width: 790px) {
+  .empty-cart img{
+    width: 300px;
+  }
+  .confirm-msz{
+    font-size: .8rem;
+  }
 }
