@@ -3,7 +3,7 @@ import {products} from '../../data/product.js'
 import { updateHeader} from '../../script/../script/header.js'
 import {renderPaymentSummary} from './paymentSummary.js'
 const container = document.querySelector('.checkout-js-html');
-
+import { checkCartLength } from './isCartEmpty.js';
 
 let html = "";
 
@@ -37,7 +37,8 @@ document.querySelectorAll('.js-delete').forEach((item) =>{
     const container = document.querySelector(`.js-cart-item-${productId}`)
    container.remove()
    updateHeader()
-   renderPaymentSummary()
+   renderPaymentSummary();
+   checkCartLength()
   })
 });
 

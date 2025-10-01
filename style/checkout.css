@@ -306,3 +306,15 @@ box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 .confirm-msz.show img{
   transform: rotate(360deg) scale(1.5);
 }
+.empty-cart{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+.empty-cart span{
+  font-size: 1.5rem;
+  color: #4f46e5;
+ font-weight: 600;
+
+}
