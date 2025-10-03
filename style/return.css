@@ -1,0 +1,55 @@
+
+body{
+    background-color: aliceblue;
+}
+.container{
+    margin: 10% auto;
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.grid-container{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 10px;
+   padding: 20px;
+}
+
+.card{
+    border: 1px solid rgba(0, 0, 0, 0.342);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: white;
+    gap: 20px;
+    }
+
+    @media screen and (max-width: 790px) {
+        .card{
+            flex-direction: column;
+
+        }
+    }
+
+.return-image{
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+}
+
+.return-image img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.body-info{
+   font-size: 1.4rem;
+   display: flex;
+   gap: 20px;
+   flex-direction: column;
+   font-weight: 600;
+}

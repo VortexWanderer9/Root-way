@@ -5,56 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout page</title>
     <link rel="stylesheet" href="style/navBar.css">
+    <link rel="stylesheet" href="style/return.css">
 </head>
 <body>
-    <nav id="navbar">
-            <div class="logo">
-                <a href="main.html">
-                    <img width="60" src="images/logo/online-store-shopping-cart-svgrepo-com.svg" alt="">
-                </a>
-            </div>
-            <div class="search">
-                <input type="text" placeholder="Search">
-                <div class="searchBtn">
-                    <span>Search</span>
+     <nav id="navbar">
+                  <div class="logo">
+                      <a href="main.html">
+                          <img width="60" src="images/logo/online-store-shopping-cart-svgrepo-com.svg" alt="">
+                      </a>
+                  </div>
+                  <div class="search">
+                      <input type="text" placeholder="Search">
+                      <div class="searchBtn">
+                          <span>Search</span>
+                      </div>
+                  </div>
+                  <div class="links">
+                      <div class="favorite">
+                        <a href="checkout.html" class="favorite">
+                          <p>Cart</p>
+                              <img src="images/icons/subscription-svgrepo-com.svg" alt="" width="60">
+                        </a>
+                      </div>
+                      <div class="return">
+                          <a href="order&return.html" class="Return">
+                              <p>Return</p>
+                              <img src="images/icons/return.svg" alt="" height="40" width="40"></a>
+                      </div>
+                        <div class="cart">
+                          <a href="favorite.html">
+                            <p>Favorite</p>
+                          <img width="50" src="images/icons/shopping-cart-commerce-and-shopping-svgrepo-com.svg" alt="">
+                          <span>:</span>
+                          <div class="items-in-cart js-fav-count"></div>
+                          </a>
+                        </div>
+              </div>
+          </nav>
+          <div class="menu">
+              <a href=""><img src="images/icons/menu-dots.svg" alt="menu" width="80"></a>
+          </div>
+              <div class="side-nav">
+                <div class="close">
+                  <img src="images/icons/close.svg" width="20" alt="close">
                 </div>
-            </div>
-            <div class="links">
-                <div class="favorite">
-                   <a href="favorite.html" class="favorite">
-                    <p>Favorite</p>
-                        <img src="images/icons/subscription-svgrepo-com.svg" alt="" width="60">
-                   </a>
+                  <div class="side-links">
+                    <a href="main.html">Home</a>
+                  <a href="">Contract</a>
+                  <a href="">About Us</a>
+                  <a href="">Products</a>
+                  <a href="checkout.html">Cart</a>
+                  <a href="">Terms And Condition</a>
+                  <a href="">Report</a>
+                    <a href="favorite.html">Favorite Items</a>
+                    <a href="order&return.html">Orders and Return </a>
+                  </div>
+              
+          </div>
+
+
+    <div class="container">
+        <div class="grid-container">
+           <div class="card">
+                <div class="return-image">
+                    <img src="images/products/6-piece-non-stick-baking-set.webp" alt="image-of-product">
                 </div>
-                <div class="return">
-                    <a href="order&return.html" class="Return">
-                         <p>Return</p>
-                        <img src="images/icons/return.svg" alt="" height="40" width="40"></a>
-                </div>
-                   <div class="cart">
-                    <a href="checkout.html">
-                      <p>Cart</p>
-                    <img width="50" src="images/icons/shopping-cart-commerce-and-shopping-svgrepo-com.svg" alt="">
-                    <span>:</span>
-                    <div class="items-in-cart">2</div>
-                     </a>
+                <div class="body-info">
+                     <p class="product-name">6-piece-non-stick-baking-set</p>
+                    <p class="quantity">Quantity: <span>2</span></p>
                    </div>
-        </div>
-    </nav>
-    <div class="menu">
-        <a href=""><img src="images/icons/menu.svg" alt="menu" width="80"></a>
-    </div>
-        <div class="side-nav">
-            <a href="main.html">Home</a>
-            <a href="">Contract</a>
-            <a href="">About Us</a>
-            <a href="">Products</a>
-            <a href="">Cart</a>
-            <a href="">Terms And Condition</a>
-            <a href="">Report</a>
-              <a href="favorite.html">Favorite Items</a>
-               <a href="order&return.html">Orders and Return </a>
+                 <div class="buttons">
+                   <div class="track-location">
+                    <img width="10" src="images/icons/location.svg" alt="">
+                    <span>Track Item</span>
+                   </div>
+                   <div class="purchase-item">
+                    <img width="10" src="images/icons/loop.svg" alt="">
+                    <span>Order Again</span>
+                   </div>
+                   <div class="return">
+                    <img width="10" src="images/icons/return-box.svg" alt="">
+                    <span>Return Item</span>
+                   </div>
+                   </div>
+            </div>
+
         
+        </div>
     </div>
     
 </body>
