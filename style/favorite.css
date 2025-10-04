@@ -104,3 +104,26 @@
         background-color: rgba(21, 204, 204, 0.507);
         color: #290101;
     }
+
+    .empty-cart{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  cursor: pointer;
+}
+.empty-cart span{
+  font-size: 1.5rem;
+  color: #4f46e5;
+ font-weight: 600;
+
+}
+
+@media  screen and (max-width: 790px) {
+  .empty-cart img{
+    width: 300px;
+  }
+  .confirm-msz{
+    font-size: .8rem;
+  }
+}

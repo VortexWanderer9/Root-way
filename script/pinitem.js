@@ -32,11 +32,28 @@ document.querySelectorAll('.remove-btn').forEach((item) =>{
         container.remove();
         removeFromFav(productId);
         updateHeader()
+        checkItem()
     })
     
 });
  
-
 function updateHeader(){
  document.querySelector('.js-fav-count').innerHTML = `${favorite.length}`
 }
+
+const con = document.querySelector('.empty-cart')
+export function checkItem(){
+    let html = `  <img src="images/empty-cart.svg" width="400"  alt="">
+            <span>Empty Favorites</span>`
+    const cartLength = favorite.length;
+    if(cartLength === 0){
+      con.innerHTML = html
+    }
+
+}
+checkItem();
+console.log(con);
+
+con.addEventListener('click', (e) =>{
+    window.location.href = 'main.html'
+})
