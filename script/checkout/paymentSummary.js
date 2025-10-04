@@ -4,7 +4,7 @@ import { formatPrice} from '../unite/formatPrice.js'
 import { updateHeader } from '../../script/header.js'
 import { renderOrderSummary } from './order.js'
 import {checkCartLength} from './isCartEmpty.js'
-import {order} from '../../data/orderItem.js'
+import {order, addToOrder} from '../../data/orderItem.js'
 export function renderPaymentSummary(){
   let productsPriceCents = 0;
     cart.forEach(element => {
@@ -34,9 +34,13 @@ export function renderPaymentSummary(){
           notification.innerHTML = 'Cart is Empty'
         } 
         if(cart.length > 0){
-           order.push(cart)
-  
-        }
+         let newOrder = cart
+          newOrder.forEach((item) =>{
+          addToOrder(item.productId, item.quantity);
+          console.log(order);
+          
+        });
+      }
         notification.classList.add('show');
         if(setTimeStore){
           clearInterval(setTimeStore)
