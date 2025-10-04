@@ -4,7 +4,7 @@ import { formatPrice} from '../unite/formatPrice.js'
 import { updateHeader } from '../../script/header.js'
 import { renderOrderSummary } from './order.js'
 import {checkCartLength} from './isCartEmpty.js'
-  
+import {order} from '../../data/orderItem.js'
 export function renderPaymentSummary(){
   let productsPriceCents = 0;
     cart.forEach(element => {
@@ -26,16 +26,17 @@ export function renderPaymentSummary(){
       </div>
       <button class="checkout-btn" id="place-order-btn">Proceed to Payment</button>`;
       document.querySelector('.summary-container').innerHTML = paymentSummaryHtml;
-
       const btnPlace = document.getElementById('place-order-btn');
       const notification = document.querySelector('.confirm-msz');
       let setTimeStore;
-
       btnPlace.addEventListener('click', () => {
         if(cart.length === 0){
           notification.innerHTML = 'Cart is Empty'
         } 
-        if(cart.length > 0){}
+        if(cart.length > 0){
+           order.push(cart)
+  
+        }
         notification.classList.add('show');
         if(setTimeStore){
           clearInterval(setTimeStore)
@@ -43,7 +44,7 @@ export function renderPaymentSummary(){
        setTimeStore = setInterval(() =>{
           notification.classList.remove('show');
         }, 2000)
-        
+               
       setInterval(() =>{
         clearCartItem();
         renderPaymentSummary();
@@ -53,4 +54,3 @@ export function renderPaymentSummary(){
       }, 200);
       });
 }
-

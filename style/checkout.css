@@ -217,9 +217,6 @@ input[type="radio"]:checked::after {
   background: #fff;
   border-radius: 50%;
 }
-.summary{
-  
-}
 .summary h2{
     color: #4f46e5;
     position: relative;
@@ -243,27 +240,22 @@ input[type="radio"]:checked::after {
 .summary-row{
     font-size: 16px;
 }
-
 .summary-container{
   padding: 20px;
   border: 1px solid var(--color-grey-dark);
   border-radius: 5px;
-}
-.summary-row{
+}.summary-row{
   display: flex;
   gap: 10px;
   justify-content: space-between;
     margin-top: 10px;
-}
-.summary-row.total{
+}.summary-row.total{
   font-size: 22px;
   color: var(--color-primary);
    border-top: 2px solid var(--color-grey-dark);
    padding: 10px;
    font-weight: 600;
-}
-
-    .checkout-btn{
+}.checkout-btn{
       padding: 0.8rem 1.5rem;
       font-weight: 600;
       border-radius: 10px;
@@ -313,16 +305,13 @@ box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   gap: 20px;
   align-items: center;
   cursor: pointer;
-}
-.empty-cart span{
+}.empty-cart span{
   font-size: 1.5rem;
   color: #4f46e5;
  font-weight: 600;
 
-}
-
-@media  screen and (max-width: 790px) {
-  .empty-cart img{
+} @media  screen and (max-width: 790px) {
+  .empty-cart img {
     width: 300px;
   }
   .confirm-msz{
