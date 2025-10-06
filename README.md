@@ -23,5 +23,3 @@ This project implements a simple online shopping cart functionality using JavaSc
 - Implement a cart view to see all added items and their quantities.
 - Add functionality to remove items from the cart.
 - Integrate with a backend to persist cart data across sessions.
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
