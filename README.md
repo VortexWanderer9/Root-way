@@ -1,4 +1,4 @@
-.............................
+# Root-Way
 # Shopping Cart Functionality
 This project implements a simple online shopping cart functionality using JavaScript. It allows users to add products to their cart and provides feedback when items are added.
 ## Features
