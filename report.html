@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Root Way | My Orders</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f4f6f8;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #0b132b;
+      color: #fff;
+      padding: 1.2rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 2rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #5bc0be;
+    }
+
+    .orders-section {
+      flex: 1;
+      padding: 3rem 10%;
+      background: #fff;
+      animation: fadeInUp 1s ease;
+    }
+
+    .orders-section h2 {
+      font-size: 2rem;
+      color: #0b132b;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .orders-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .order-card {
+      background: #f9fafc;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      padding: 1.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .order-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    }
+
+    .order-card img {
+      width: 100%;
+      border-radius: 0.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .order-info h3 {
+      color: #0b132b;
+      margin-bottom: 0.5rem;
+    }
+
+    .order-info p {
+      color: #555;
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .report-btn {
+      background-color: #ff595e;
+      color: #fff;
+      border: none;
+      padding: 0.7rem;
+      border-radius: 0.5rem;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-top: 1rem;
+    }
+
+    .report-btn:hover {
+      background-color: #ff7b81;
+    }
+
+    .status {
+      display: inline-block;
+      padding: 0.3rem 0.7rem;
+      border-radius: 0.4rem;
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+      color: #fff;
+    }
+
+    .delivered { background-color: #4caf50; }
+    .pending { background-color: #ff9800; }
+    .cancelled { background-color: #f44336; }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 1rem;
+      width: 90%;
+      max-width: 500px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      animation: fadeInUp 0.5s ease;
+      position: relative;
+    }
+
+    .modal-content h3 {
+      color: #0b132b;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .modal-content label {
+      display: block;
+      margin-top: 1rem;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .modal-content textarea, .modal-content input {
+      width: 100%;
+      margin-top: 0.5rem;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 0.5rem;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+    }
+
+    .modal-content textarea:focus, .modal-content input:focus {
+      border-color: #5bc0be;
+      outline: none;
+    }
+
+    .modal-content button {
+      margin-top: 1.5rem;
+      background-color: #0b132b;
+      color: #fff;
+      border: none;
+      padding: 0.8rem 2rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+      width: 100%;
+    }
+
+    .modal-content button:hover {
+      background-color: #5bc0be;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      color: #333;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #0b132b;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .orders-section {
+        padding: 2rem 5%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Root Way</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Products</a>
+      <a href="#">Orders</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <section class="orders-section">
+    <h2>My Orders</h2>
+    <div class="orders-grid">
+      <div class="order-card">
+        <img src="https://cdn.pixabay.com/photo/2015/01/21/14/14/apple-606761_1280.jpg" alt="Headphones">
+        <div class="order-info">
+          <h3>Wireless Headphones</h3>
+          <p>Order ID: #10234</p>
+          <p>Status: <span class="status delivered">Delivered</span></p>
+        </div>
+        <button class="report-btn" onclick="openModal('Wireless Headphones')">Report Issue</button>
+      </div>
+
+      <div class="order-card">
+        <img src="https://cdn.pixabay.com/photo/2016/02/19/10/00/laptop-1209008_1280.jpg" alt="Laptop Bag">
+        <div class="order-info">
+          <h3>Smart Laptop Bag</h3>
+          <p>Order ID: #10241</p>
+          <p>Status: <span class="status pending">Pending</span></p>
+        </div>
+        <button class="report-btn" onclick="openModal('Smart Laptop Bag')">Report Issue</button>
+      </div>
+
+      <div class="order-card">
+        <img src="https://cdn.pixabay.com/photo/2014/05/02/21/50/coffee-336312_1280.jpg" alt="Coffee Beans">
+        <div class="order-info">
+          <h3>Organic Coffee Beans</h3>
+          <p>Order ID: #10258</p>
+          <p>Status: <span class="status delivered">Delivered</span></p>
+        </div>
+        <button class="report-btn" onclick="openModal('Organic Coffee Beans')">Report Issue</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal" id="reportModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h3>Report Product Issue</h3>
+      <form id="reportForm">
+        <label for="product">Product</label>
+        <input type="text" id="product" readonly>
+
+        <label for="issue">Describe the Issue</label>
+        <textarea id="issue" rows="4" placeholder="Describe your issue..." required></textarea>
+
+        <label for="email">Your Email</label>
+        <input type="email" id="email" placeholder="example@email.com" required>
+
+        <button type="submit">Send Report</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Root Way — Manage Your Orders Easily
+  </footer>
+
+  <script>
+    const modal = document.getElementById('reportModal');
+    const productField = document.getElementById('product');
+
+    function openModal(productName) {
+      modal.style.display = 'flex';
+      productField.value = productName;
+    }
+
+    function closeModal() {
+      modal.style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        closeModal();
+      }
+    }
+  </script>
+</body>
+</html>
