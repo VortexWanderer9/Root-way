@@ -24,9 +24,15 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     }
 
-    header h1 {
+    .logo{
+      text-decoration: none;
+      color: white;
       font-size: 1.8rem;
       font-weight: 600;
+      transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1)
+    }
+    .logo:hover{
+ color: #5bc0be;
     }
 
     nav a {
