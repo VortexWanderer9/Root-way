@@ -1,0 +1,127 @@
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: #f5f7fa;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header {
+      background-color: #0b132b;
+      color: #fff;
+      padding: 1.2rem 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      font-weight: 600;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 2rem;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #5bc0be;
+    }
+
+    .about-section {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 4rem 10%;
+      background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+    }
+
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+      padding: 2rem;
+      animation: fadeInUp 1s ease;
+    }
+
+    .about-text h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #0b132b;
+    }
+
+    .about-text p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    .highlight {
+      color: #5bc0be;
+      font-weight: 600;
+    }
+
+    .about-image {
+      flex: 1;
+      min-width: 300px;
+      text-align: center;
+      animation: fadeInRight 1s ease;
+    }
+
+    .about-image img {
+      max-width: 100%;
+      border-radius: 1rem;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .demo-note {
+      background: #fff3cd;
+      color: #856404;
+      border-left: 5px solid #ffeb3b;
+      padding: 1rem;
+      margin: 2rem 0;
+      border-radius: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      background-color: #0b132b;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(40px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 768px) {
+      .about-section {
+        flex-direction: column;
+        padding: 2rem 5%;
+      }
+      .about-text, .about-image {
+        padding: 1rem 0;
+      }
+    }
