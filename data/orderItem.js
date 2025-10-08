@@ -34,4 +34,3 @@ if(matchingProduct){
 }
 addToLocalStore()
 }
-console.log(order);
